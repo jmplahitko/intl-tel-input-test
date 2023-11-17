@@ -20,7 +20,6 @@ document.querySelector('#app').innerHTML = `
 
 const input = document.querySelector("#phone");
 const iti = intlTelInput(input);
-// iti.setNumber('3407785717')
 
 input.addEventListener('keyup', e => {
 	let num = iti.getNumber();
@@ -28,10 +27,11 @@ input.addEventListener('keyup', e => {
 	let mightBeValid = isPossibleNumber(num, country.iso2);
 	console.log(mightBeValid);
 
-	if (mightBeValid) {
+	// the below condition can be uncommented to show that it happens regardless of setting number after each keystroke or not
+	// if (mightBeValid) {
 		iti.setNumber(iti.getNumber())
 		console.log(iti.getNumber())
-	}
+	// }
 
 })
 
